@@ -4,6 +4,13 @@
     {
       "src": "backend/api/index.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "frontend1-react/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
@@ -16,13 +23,13 @@
       "dest": "backend/api/index.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "frontend1-react/dist/index.html"
     }
   ],
-  "outputDirectory": "frontend1-react/dist",
-  "buildCommand": "cd frontend1-react && npm install && npm run build",
-  "installCommand": "pip install -r requirements.txt",
   "env": {
     "PYTHONPATH": "/var/task/backend"
   }
