@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/api/index.py"
+    },
+    {
+      "src": "/health",
+      "dest": "backend/api/index.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "outputDirectory": "frontend1-react/dist",
+  "buildCommand": "cd frontend1-react && npm install && npm run build",
+  "installCommand": "pip install -r requirements.txt",
+  "env": {
+    "PYTHONPATH": "/var/task/backend"
+  }
+}

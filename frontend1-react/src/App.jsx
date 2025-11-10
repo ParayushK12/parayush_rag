@@ -49,7 +49,7 @@ export default function App() {
     }
     setLoading(true)
     try {
-      const res = await fetch('http://localhost:5000/api/process-text', {
+      const res = await fetch('/api/process-text', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text })
@@ -75,7 +75,7 @@ export default function App() {
     try {
       const fd = new FormData()
       fd.append('file', file)
-      const res = await fetch('http://localhost:5000/api/process-pdf', {
+      const res = await fetch('/api/process-pdf', {
         method: 'POST',
         body: fd
       })
@@ -132,7 +132,7 @@ export default function App() {
       </section>
 
       <footer>
-        <small className="muted">Backend expected at http://localhost:5000 — make sure your Flask server is running.</small>
+        <small className="muted">Powered by RAG technology and LLMs</small>
       </footer>
     </div>
   )
