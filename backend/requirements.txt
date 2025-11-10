@@ -2,21 +2,21 @@
 # Python 3.12 runtime
 
 # Web / API
-Flask
-Flask-Cors
+Flask==3.0.0
+Flask-Cors==4.0.0
 
 # Environment management
-python-dotenv
+python-dotenv==1.0.0
 
 # PDF processing
-pdfplumber
-pypdf
+pdfplumber==0.10.3
+pypdf==4.0.1
 
 # LLM / AI clients and LangChain - use compatible versions
-langchain
-langchain-core
-langchain-google-genai
-google-generativeai
+langchain==0.2.0
+langchain-core==0.2.0
+langchain-google-genai==1.0.4
+google-generativeai>=0.5.2
 
 # Note: Removed heavy packages like PyMuPDF, mistralai, pytest, black
 # that aren't used in the serverless function to reduce cold start time
